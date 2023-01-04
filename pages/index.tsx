@@ -26,7 +26,7 @@ export default function Home(props: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-     <div className={'w-full max-w-screen-xl mx-auto border-red-900 border-2'}>
+     <div className={'w-full max-w-screen-xl mx-auto'}>
          <div className={'flex flex-row items-center justify-between m-5'}>
              <div className={'font-extrabold text-3xl'}>
                  Haoyudoing.
