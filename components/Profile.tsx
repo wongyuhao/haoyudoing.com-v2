@@ -8,7 +8,7 @@ export default function Profile() {
     return (
         <div className={'card lg:col-span-4 flex flex-row justify-between md:block'}>
                 <Image
-                    className={'rounded-full w-1/3 md:mx-auto md:w-60 lg:mb-2'}
+                    className={'rounded-full w-1/4 md:mx-auto md:w-60 lg:mb-2'}
                     src={Headshot}
                     alt={'Headshot of Yu Hao Wong'}
                     style={{
