@@ -8,7 +8,7 @@ export default function Profile() {
     return (
         <div className={'card lg:col-span-4 flex flex-row justify-between md:block'}>
                 <Image
-                    className={'rounded-full w-32 md:mx-auto md:w-60 lg:mb-2'}
+                    className={'rounded-full w-1/3 md:mx-auto md:w-60 lg:mb-2'}
                     src={Headshot}
                     alt={'Headshot of Yu Hao Wong'}
                     style={{
@@ -16,8 +16,8 @@ export default function Profile() {
                         height: "auto"
                     }} />
 
-                <div className={'my-auto'}>
-                    <div className={'font-medium text-2xl'}>Yu Hao Wong</div>
+                <div className={'p-1 my-auto'}>
+                    <div className={'font-medium text-xl lg:text-2xl'}>Yu Hao Wong</div>
                     <div className={'text-sm font-mono'}>
                         <div>University of Washington</div>
                         <div>B.S. Computer Science 2024</div>
