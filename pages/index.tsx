@@ -27,7 +27,7 @@ export default function Home(props: HomeProps) {
       </Head>
 
      <div className={'w-full max-w-screen-xl mx-auto'}>
-         <div className={'flex flex-row items-center justify-between m-5'}>
+         <div className={'flex flex-row items-center justify-between p-5'}>
              <div className={'font-extrabold text-3xl'}>
                  Haoyudoing.
              </div>
