@@ -24,7 +24,7 @@ export default function Code(props: CodeProps ) {
             <div className={'grid lg:grid-cols-2 gap-2'}>
                 {props.codeItems.map(
                         (item, i)=>
-                            <div key={i} className={'col-span-1 rounded-lg ease-out duration-100 hover:scale-[1.01] '}>
+                            <div key={i} className={'col-span-1 rounded-lg ease-out duration-200 hover:scale-[1.01] '}>
                                 <div className={'w-full h-48 relative z-0'}>
                                     <div className={'top-0 absolute z-20 bg-opacity-70 bg-black w-full h-full rounded-lg flex flex-col justify-between'}>
                                         <div className={'p-5 text-white drop-shadow-lg'}>
@@ -35,7 +35,7 @@ export default function Code(props: CodeProps ) {
                                         <div className={'p-5 text-white drop-shadow flex flex-row-reverse justify-between'}>
                                             {
                                                 item.url ?
-                                                    <a href={item.url?.toString()} className={'opacity-70'}>
+                                                    <a href={item.url.toString()} className={'opacity-70'}>
                                                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} size={'lg'}/>
                                                     </a>
                                                     :
