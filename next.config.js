@@ -4,7 +4,16 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['media.graphassets.com']
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/linkedin',
+        destination: 'https://www.linkedin.com/in/haoyudoing/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
