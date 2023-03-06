@@ -56,6 +56,7 @@ const FileUpload = ({setData, setOriginal}:{ setData: Function, setOriginal:Func
         if (event && event.target && event.target.files) {
             const fileUploaded = event?.target?.files[0] || undefined;
             setFile(fileUploaded)
+            setData(undefined)
             setOriginal(<ImageCard imageURL={URL.createObjectURL(fileUploaded)} title={'Original Image'} key={0}/>)
         }
     };
