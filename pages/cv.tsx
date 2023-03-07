@@ -17,6 +17,7 @@ export default function CVPage() {
                 <a href={'#cv-video'}>Video</a>
                 <a href={'#cv-pipeline'}>Pipeline</a>
                 <a href={'#cv-discussion'}>Discussion</a>
+                <a href={'https://github.com/wongyuhao/MOMO'} target={'_blank'} rel="noreferrer">GitHub</a>
             </div>
         </div>
         <div className={'h-16'}/>
