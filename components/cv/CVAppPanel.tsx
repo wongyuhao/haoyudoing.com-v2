@@ -2,6 +2,8 @@ import React, {ReactElement, useState} from "react";
 import cvAPIResponse from "../interfaces/cvAPI";
 import ImageCard from "./ImageCard";
 import demoResponse from './demo_response.json'
+import {PersonCard, AddPersonCard} from "./PersonCard";
+import cvLineItem from "../interfaces/cvAPI";
 
 
 const ENDPOINT =  "https://haoyudoing-cv.41jinkddvfm6q.us-west-2.cs.amazonlightsail.com/cv";
@@ -9,6 +11,38 @@ const ENDPOINT =  "https://haoyudoing-cv.41jinkddvfm6q.us-west-2.cs.amazonlights
 export function CVAppPanel({data, setData}:{data: cvAPIResponse | undefined, setData: Function}) {
     const [file, setFile] = useState<File | undefined>(undefined)
     const [original, setOriginal] = useState<ReactElement | undefined>(undefined)
+    const [activeOwner, setActiveOwner] = useState<string | undefined>(undefined)
+    const [ownersList, setOwnersList] = useState<Set<string>>(new Set())
+    const [ownerMap, setOwnerMap] = useState<Map<string, Set<cvLineItem>>>(new Map())
+
+    const addPerson = (name:string) => {
+        const copy = new Set(ownersList)
+        copy.add(name)
+        setOwnersList(copy)
+
+    }
+
+
+    const removePerson = (name:string) => {
+        const copy = new Set(ownersList)
+        copy.delete(name)
+        setOwnersList(copy)
+    }
+
+    const assignToOwner = (owner: string | undefined, item: cvLineItem) => {
+        if (owner) {
+            // assign to owner
+            const copy = ownerMap
+            if (!ownerMap.has(owner)) {
+                ownerMap.set(owner, new Set<cvLineItem>())
+            }
+
+            ownerMap.get(owner)?.add(item)
+        } else {
+
+        }
+    }
+
 
     return (
         <div className={'w-1/2 h-full bg-gray-700 h-[calc(100vh-64px)] overflow-y-auto p-4'}>
@@ -27,11 +61,22 @@ export function CVAppPanel({data, setData}:{data: cvAPIResponse | undefined, set
                         Try Demo Image
                 </div>
             </div>
+            {/*{*/}
+            {/*    data &&*/}
+            {/*    <div className={'overflow-x-scroll flex flex-row gap-3 py-3 scrollbar-hide'}>*/}
+            {/*        <AddPersonCard addPerson={addPerson}/>*/}
+            {/*        {*/}
+            {/*            Array.from(ownersList).map((owner, i) => {*/}
+            {/*                return <PersonCard active={activeOwner === owner} name={owner} key={i} removePerson={()=>removePerson(owner)} setActive={setActiveOwner}/>*/}
+            {/*            })*/}
+            {/*        }*/}
+            {/*    </div>*/}
+            {/*}*/}
 
             <div className={'flex flex-col my-4'}>
                 {data && <p>Items found: {data.items.length}</p>}
                 {data?.items.map(
-                    (item, i) => <CVLineItem name={item.name} value={item.value} key={i}/>
+                    (item, i) => <CVLineItem obj={item} key={i} activeOwner={activeOwner} assignToOwner={assignToOwner}/>
                 )}
             </div>
             
@@ -156,11 +201,23 @@ const FileUpload = ({setData, setOriginal, file, setFile}:{ setData: Function, s
 };
 
 
-const CVLineItem = ({name, value}:{name: string, value:string}) => {
+const CVLineItem = ({obj, activeOwner, assignToOwner}:{obj:cvLineItem, activeOwner: string | undefined, assignToOwner:Function}) => {
+    const [owner, setOwner] = useState(obj.owner)
     return (
-        <div className={'bg-gray-600 flex flex-row justify-between py-4 px-5 my-1 rounded-lg'}>
-            <p className={'font-bold'}>{name}</p>
-            <p>$ {value}</p>
+        <div
+            className={`bg-gray-600 flex flex-row justify-between py-4 px-5 my-1 rounded-lg ${activeOwner ? 'cursor-pointer' : ''}`}
+            onClick={()=> {
+                obj.owner = activeOwner
+                assignToOwner(activeOwner, obj)
+                setOwner(activeOwner)
+            }}
+        >
+
+            <div>
+                <p className={'font-bold'}>{obj.name}</p>
+                <p>{owner}</p>
+            </div>
+            <p>$ {obj.value}</p>
         </div>
     )
 }
