@@ -11,6 +11,9 @@ const ENDPOINT =  "https://haoyudoing-cv.41jinkddvfm6q.us-west-2.cs.amazonlights
 export function CVAppPanel({data, setData}:{data: cvAPIResponse | undefined, setData: Function}) {
     const [file, setFile] = useState<File | undefined>(undefined)
     const [original, setOriginal] = useState<ReactElement | undefined>(undefined)
+
+    const [loadingDemo, setLoadingDemo] = useState<boolean>(false)
+
     const [activeOwner, setActiveOwner] = useState<string | undefined>(undefined)
     const [ownersList, setOwnersList] = useState<Set<string>>(new Set())
     const [ownerMap, setOwnerMap] = useState<Map<string, Set<cvLineItem>>>(new Map())
@@ -53,13 +56,20 @@ export function CVAppPanel({data, setData}:{data: cvAPIResponse | undefined, set
                 <b>Note: </b>This pipeline can occasionally fail under certain image conditions. We discuss some of these issues <a href={'#cv-discussion'} className={'styled'}>here</a>. To best demonstrate this project, try this demo image that was used during testing.
                 <div 
                     onClick={()=>{
-                        setData(demoResponse)
+                        setLoadingDemo(true)
                         setOriginal(<ImageCard imageURL="https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/demo1.png" title="Original"/>)
-                    }} 
+
+                        setTimeout(()=> {
+                            setLoadingDemo(false)
+                            setData(demoResponse)
+                        },2000)
+
+                    }}
 
                     className={'p-2 bg-blue-600 w-fit rounded-lg my-2 cursor-pointer'}>
                         Try Demo Image
                 </div>
+                {loadingDemo && <p className={'text-sm opacity-70 loading text-left'}>Working</p>}
             </div>
             {/*{*/}
             {/*    data &&*/}
