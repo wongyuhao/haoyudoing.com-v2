@@ -1,0 +1,57 @@
+{
+    "images": [
+        "https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/edges.jpeg",
+        "https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/contour.jpeg",
+        "https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/perspective.jpeg",
+        "https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/threshold.jpeg",
+        "https://haoyudoing-cv.s3.us-west-2.amazonaws.com/demo/91b35e03-7b66-4930-949e-d155337b2698/scanned.jpeg"
+    ],
+    "items": [
+        {
+            "name": "BONE BROTH BE",
+            "value": "02.99"
+        },
+        {
+            "name": "SOUP_ TETRA",
+            "value": "02.00"
+        },
+        {
+            "name": "ROT TH",
+            "value": "00.49"
+        },
+        {
+            "name": "SHREDDED HExICAN BLEND .",
+            "value": "03.63"
+        },
+        {
+            "name": "HERB ANTRO ORG 7 OZ .",
+            "value": "79.00"
+        },
+        {
+            "name": "A i JUMBO WHITE EAC",
+            "value": "03.87"
+        },
+        {
+            "name": "Lite EACH",
+            "value": "00.78"
+        },
+        {
+            "name": "mat a2 LANTRO ORG .75_0",
+            "value": "01.79"
+        },
+        {
+            "name": "SPIce BAY LEAVES Q. a",
+            "value": "03.99"
+        },
+        {
+            "name": "APPLE BAG ORG GALA 2 LB.",
+            "value": "02.99"
+        },
+        {
+            "name": "T BAG FEE",
+            "value": "00.08"
+        }
+    ],
+    "pipeline_elapsed": "0.2872",
+    "total_elapsed": "0.4290"
+}

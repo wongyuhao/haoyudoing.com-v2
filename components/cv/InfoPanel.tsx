@@ -100,6 +100,12 @@ export function InfoPanel({data}:{data: cvAPIResponse | undefined}){
                     <li>
                         <b>Character Recognition Accuracy:</b> The baseline Tesseract model used is not optimized for receipts, resulting in somewhat-accurate text-box detection, but sometimes-inaccurate character recognition, leading to jumbled item names.
                     </li>
+                    <li>
+                        <b>Region Detection Accuracy:</b> If the contrast difference between the receipt and the background is not sufficiently high, the pipeline may fail to detect the contours. This is a common issue with most OCR, but this hand implementation is especially vulnerable to it.
+                    </li>
+                    <li>
+                        <b>RegEx Matching Accuracy: </b> The current RegEx used to parse detected text is set to recognize dollar values in the $xx.xx format. Anything beyond that is not supported at this time.
+                    </li>
                 </div>
 
 

@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['media.graphassets.com', 'haoyudoing-cv.s3.amazonaws.com']
+    domains: ['media.graphassets.com', 'haoyudoing-cv.s3.amazonaws.com', 'haoyudoing-cv.s3.us-west-2.amazonaws.com']
   },
   async redirects() {
     return [
