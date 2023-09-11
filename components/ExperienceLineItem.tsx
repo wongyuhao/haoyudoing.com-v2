@@ -16,33 +16,30 @@ type ELI_Props = {
 }
 export default function ExperienceLineItem({item}:ELI_Props) {
     return (
-        <div>
-            <div  className={'bg-gray-100 p-3 rounded-xl my-3'}>
-                <div className={'flex flex-row justify-between'}>
-                    <div className={'text-sm'}>
-                        <p className={'font-medium'}>{item.company}</p>
-                        <p className={'font-light'}>{item.role}</p>
-                        <hr className={'my-1'}/>
-                        <div className={'text-xs font-mono'}>
-                            {item.description}
-                        </div>
-                    </div>
-                    <div>
-                        <Image
-                            className={'rounded'}
-                            src={item.image.src}
-                            alt={item.company}
-                            width={90}
-                            height={90}
-                            style={{
-                                maxWidth: "50px",
-                                height: "auto"
-                            }} />
-                    </div>
+        <div  className={'p-3'}>
+        <div className={'flex flex-row justify-between'}>
+            <div className={''}>
+                <p className={'font-medium'}>{item.company}</p>
+                <p className={'font-light'}>{item.role}</p>
 
+                <div className={'text-sm'}>
+                    {item.description}
                 </div>
-
             </div>
+            <div>
+                <Image
+                    className={'rounded'}
+                    src={item.image.src}
+                    alt={item.company}
+                    width={90}
+                    height={90}
+                    style={{
+                        maxWidth: "50px",
+                        height: "auto"
+                    }} />
+            </div>
+
         </div>
+    </div>      
     );
 }

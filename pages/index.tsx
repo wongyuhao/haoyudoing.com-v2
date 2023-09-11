@@ -9,10 +9,6 @@ import {request, gql} from 'graphql-request';
 import Footer from '../components/Footer';
 
 
-
-
-
-
 type HomeProps = {
     projectData: Project[]
 }
@@ -68,7 +64,7 @@ export async function getStaticProps() {
     }
     `
 
-    const projectData = await request(process.env.GRAPH_ENDPOINT || "", query)
+    const projectData = await request(process.env.GRAPH_ENDPOINT || "https://ap-northeast-1.cdn.hygraph.com/content/cke73dv0pgsmj01xid076hy4t/master", query)
         .then((data) => data.projects as Project[])
 
     return {

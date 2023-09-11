@@ -11,7 +11,7 @@ export default function Keyboards() {
         <div className={'card w-full col-span-4 row-span-6'}>
             <p className={'text-xl p-1'}>Keyboards</p>
 
-            <div className={'bg-gray-50 font-mono text-sm rounded-lg p-3'}>
+            <div className={'bg-gray-50 text-sm rounded-lg p-3'}>
                 {'Look mom I\'m in the news! '}
                 {'Read about my work on making open-source mechanical keyboard projects more accessible and better documented.'}
                 <div className={'p-3 w-fit'}>
@@ -25,22 +25,16 @@ export default function Keyboards() {
                             <FontAwesomeIcon icon={faNewspaper} size={'xl'}/>
                         </div>
                         <div className={'mr-3'}/>
-                        <p className={'font-mono'}>Article 	→</p>
+                        <p className={''}>Article 	→</p>
                     </a>
                 </div>
                 <div className={'p-3 w-full relative'}>
-                    <Link
-                        className={'flex flex-row flex-nowrap items-center '}
-                        href={''}
-                        onMouseEnter={()=>setComingSoon(true)}
-                        onMouseLeave={()=>setComingSoon(false)}
-                    >
-                        <div className={'flex justify-center w-4 z-10 opacity-50'}>
+                    <Link href={'/articles'}>
+                        <div className={'flex justify-center w-4'}>
                             <FontAwesomeIcon icon={faKeyboard} size={'xl'}/>
                         </div>
                         <div className={'mr-3 z-10'}/>
-                        <p className={'font-mono z-10 opacity-50'}>Build Logs 	→</p>
-                        {comingSoon && <div className='right-0 mx-1 p-2 bg-slate-600 absolute text-white rounded-lg z-20'>Coming Soon!</div>}
+                        <p className={''}>Build Logs 	→</p>
                     </Link>
                 </div>
                
