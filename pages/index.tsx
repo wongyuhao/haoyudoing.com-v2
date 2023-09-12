@@ -7,6 +7,7 @@ import Keyboards from "../components/home/Keyboards";
 import Project from "../components/interfaces/Project";
 import {request, gql} from 'graphql-request';
 import Footer from '../components/layout/Footer';
+import {useEffect, useState} from "react";
 
 
 type HomeProps = {
@@ -15,6 +16,7 @@ type HomeProps = {
 }
 
 export default function Home(props: HomeProps) {
+    const [tapiaPopup, setTapiaPopup] = useState<boolean>(true);
   return (
     <div className={''}>
       <Head>
