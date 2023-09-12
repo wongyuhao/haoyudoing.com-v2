@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Profile from "../components/Profile";
-import Description from "../components/Description";
-import Experience from "../components/Experience";
-import Code from '../components/Code';
-import Keyboards from "../components/Keyboards";
+import Profile from "../components/home/Profile";
+import Description from "../components/home/Description";
+import Experience from "../components/home/Experience";
+import Code from '../components/home/Code';
+import Keyboards from "../components/home/Keyboards";
 import Project from "../components/interfaces/Project";
 import {request, gql} from 'graphql-request';
-import Footer from '../components/Footer';
+import Footer from '../components/layout/Footer';
 
 
 type HomeProps = {
@@ -15,7 +15,7 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
   return (
-    <div className={'bg-gray-50'}>
+    <div className={''}>
       <Head>
         <title>Yu Hao Wong</title>
         <meta name="description" content="" />
@@ -23,13 +23,6 @@ export default function Home(props: HomeProps) {
       </Head>
 
      <div className={'w-full max-w-screen-xl mx-auto'}>
-         <div className={'flex flex-row items-center justify-between p-5'}>
-             <div className={'font-extrabold text-3xl'}>
-                 Haoyudoing.
-             </div>
-         </div>
-
-
          <div className={'grid grid-cols-12 grid-flow-row gap-3 px-3 lg:px-5 mx-auto'}>
              <Profile/>
              <Description/>
@@ -42,8 +35,6 @@ export default function Home(props: HomeProps) {
                  <Code codeItems={props.projectData}/>
              </div>
          </div>
-
-         <Footer/>
      </div>
     </div>
   )

@@ -1,18 +1,19 @@
 import React from 'react'
+import Image from 'next/image'
 import { gql, request } from 'graphql-request'
+import Link from "next/link";
+import {Article} from "../components/interfaces/articleInterfaces";
 
 interface ArticleProps {
     data: Article[]
 }
 
-export default (props: ArticleProps) => {
+const Articles = (props: ArticleProps) => {
     return (
-        <div className='container mx-auto max-w-xl'>
-            <p className='text-xl'>Articles</p>
-            <div className='flex flex-col gap-3'>
-            {
-                props.data.map((article) => <ArticleLineItem {...article}/>)
-            }
+        <div className='container'>
+            <p className='text-4xl py-4'>Articles</p>
+            <div className='grid grid-cols-2 gap-3  '>
+            {props.data.map((article, i) => <ArticleLineItem key={i} {...article}/>)}
             </div>
         </div>
     )
@@ -20,18 +21,26 @@ export default (props: ArticleProps) => {
 
 const ArticleLineItem = (props: Article) => {
     return (
-        <div>
-            <p className='font-bold'>{props.boardName}</p>
-            <p>{props.description}</p>
-        </div>
+        <Link href={`/articles/${props.id}`}>
+            <div className={'flex flex-col'}>
+                <Image
+                    src={props.displayImage.url}
+                    alt={props.boardName}
+                    width={500}
+                    height={500}
+                    quality={100}
+                    className={'rounded w-full h-52 object-cover'}
+                />
+                <div className={'my-3'}>
+                    <p className='text-xl font-bold'>{props.boardName}</p>
+                    <p >{props.description}</p>
+                </div>
+
+            </div>
+        </Link>
     )
 }
 
-interface Article {
-    id: string,
-    boardName: string,
-    description: string
-}
 
 export async function getStaticProps() {
     const query = gql`
@@ -40,6 +49,9 @@ export async function getStaticProps() {
             id
             boardName
             description
+            displayImage {
+                url(transformation: {image: {resize: {height: 500, width: 500}}})
+            }
         }
     }
     `
@@ -53,3 +65,5 @@ export async function getStaticProps() {
         }
     }
 }
+
+export default Articles

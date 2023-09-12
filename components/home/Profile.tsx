@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 
-import Headshot from '../public/static/headshot.jpg'
+import Headshot from '../../public/static/headshot.jpg'
 export default function Profile() {
     return (
         <div className={'card lg:col-span-4 flex flex-row justify-between md:block'}>
@@ -18,9 +18,9 @@ export default function Profile() {
 
                 <div className={'p-1 my-auto'}>
                     <div className={'font-medium text-xl lg:text-2xl'}>Yu Hao Wong</div>
-                    <div className={'text-sm font-mono'}>
+                    <div className={''}>
                         <div>University of Washington</div>
-                        <div>B.S. Computer Science 2024</div>
+                        <div className={'text-sm'}>B.S. Computer Science 2024</div>
                     </div>
                 </div>
         </div>

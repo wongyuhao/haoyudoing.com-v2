@@ -29,7 +29,7 @@ export default function Keyboards() {
                     </a>
                 </div>
                 <div className={'p-3 w-full relative'}>
-                    <Link href={'/articles'}>
+                    <Link href={'/articles'} className={'flex flex-row'}>
                         <div className={'flex justify-center w-4'}>
                             <FontAwesomeIcon icon={faKeyboard} size={'xl'}/>
                         </div>

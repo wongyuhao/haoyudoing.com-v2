@@ -16,19 +16,19 @@ type ELI_Props = {
 }
 export default function ExperienceLineItem({item}:ELI_Props) {
     return (
-        <div  className={'p-3'}>
+        <div  className={'py-3'}>
         <div className={'flex flex-row justify-between'}>
             <div className={''}>
                 <p className={'font-medium'}>{item.company}</p>
-                <p className={'font-light'}>{item.role}</p>
+                <p className={'font-light text-sm'}>{item.role}</p>
 
-                <div className={'text-sm'}>
+                <div className={'text-sm pt-2 mr-3.5'}>
                     {item.description}
                 </div>
             </div>
             <div>
                 <Image
-                    className={'rounded'}
+                    className={'rounded mt-1'}
                     src={item.image.src}
                     alt={item.company}
                     width={90}

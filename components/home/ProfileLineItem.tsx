@@ -11,7 +11,7 @@ type ProfileLineItem_Props = {
 
 export default function ProfileLineItem({icon, href, text, download}: ProfileLineItem_Props){
     return (
-        <div className={'p-2 hover:bg-gray-100 rounded-lg hover:scale-[1.02]  ease-in-out duration-300'}>
+        <div className={'p-3 hover:bg-gray-100 rounded-lg'}>
             <a
                 className={'flex flex-row flex-nowrap items-center'}
                 href={href}
@@ -23,7 +23,7 @@ export default function ProfileLineItem({icon, href, text, download}: ProfileLin
                     <FontAwesomeIcon icon={icon} size={'xl'}/>
                 </div>
                 <div className={'mr-3'}/>
-                <p className={'font-mono text-xs text-sm'}>{text}</p>
+                <p className={'text-sm'}>{text}</p>
             </a>
         </div>
     )
