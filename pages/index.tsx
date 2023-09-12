@@ -10,7 +10,8 @@ import Footer from '../components/layout/Footer';
 
 
 type HomeProps = {
-    projectData: Project[]
+    projectData: Project[],
+    resumeUrl: string
 }
 
 export default function Home(props: HomeProps) {
@@ -25,7 +26,7 @@ export default function Home(props: HomeProps) {
      <div className={'w-full max-w-screen-xl mx-auto'}>
          <div className={'grid grid-cols-12 grid-flow-row gap-3 px-3 lg:px-5 mx-auto'}>
              <Profile/>
-             <Description/>
+             <Description resumeUrl={props.resumeUrl}/>
              <div className={'col-span-12 lg:col-span-4 grid grid-cols-4 grid-flow-row-dense gap-3 '}>
                  <Experience/>
                  <Keyboards/>
@@ -52,15 +53,20 @@ export async function getStaticProps() {
             url
             description
         }
+        asset(where: {id: "clch83pbaceat0azrbyeu9ua2"}) {
+            id
+            url
+        }
     }
     `
 
-    const projectData = await request(process.env.GRAPH_ENDPOINT || "https://ap-northeast-1.cdn.hygraph.com/content/cke73dv0pgsmj01xid076hy4t/master", query)
-        .then((data) => data.projects as Project[])
-
+    const data = await request(process.env.GRAPH_ENDPOINT || "https://ap-northeast-1.cdn.hygraph.com/content/cke73dv0pgsmj01xid076hy4t/master", query)
+    const projectData = data.projects as Project[]
+    const resumeUrl = data.asset.url || "https://media.graphassets.com/VqGs071IQJugX9MO8n0T"
     return {
         props: {
-            projectData: projectData
+            projectData: projectData,
+            resumeUrl: resumeUrl
         }
     }
 }

@@ -49,7 +49,7 @@ const experience:ExperienceData[] = [
     {
         company: 'Memo Agility Consulting',
         role: 'Software Engineer Intern',
-        description: 'Designed and executing quality end-to-end software solutions for third-party business clients',
+        description: 'Designed and executed quality end-to-end software solutions for third-party business clients',
         dateStart: 'Sept. 2020',
         dateEnd:'Mar. 2021',
         location: 'Kuala Lumpur, Malaysia',

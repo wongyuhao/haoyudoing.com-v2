@@ -1,11 +1,10 @@
 import React from 'react'
-import {faEnvelope, faFileLines, IconDefinition} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faFileLines} from "@fortawesome/free-solid-svg-icons";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import ProfileLineItem from "./ProfileLineItem";
 
 
-export default function Description(){
+export default function Description({resumeUrl}:{resumeUrl: string}){
 
 
     return (
@@ -30,7 +29,7 @@ export default function Description(){
             <hr className={'my-2'}/>
 
             <div className={'grid grid-cols-2 md:grid-cols-4  lg:p-3 lg:gap-5'}>
-                <ProfileLineItem icon={faFileLines} href={'https://media.graphassets.com/4TzQssQRT9moycO6sbES'} text={'my resume'}/>
+                <ProfileLineItem icon={faFileLines} href={resumeUrl} text={'my resume'}/>
                 <ProfileLineItem icon={faLinkedin} href={'https://linkedin.com/in/haoyudoing'} text={'/in/haoyudoing'}/>
                 <ProfileLineItem icon={faEnvelope} href={'mailto:wongyuhao.swe@gmail.com'} text={'my email'}/>
                 <ProfileLineItem icon={faGithub} href={'https://github.com/wongyuhao'} text={'/wongyuhao'}/>
