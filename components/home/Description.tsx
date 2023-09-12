@@ -30,7 +30,7 @@ export default function Description(){
             <hr className={'my-2'}/>
 
             <div className={'grid grid-cols-2 md:grid-cols-4  lg:p-3 lg:gap-5'}>
-                <ProfileLineItem icon={faFileLines} href={'https://media.graphassets.com/CvtSPu49QiJhfg9D5kig'} text={'my resume'}/>
+                <ProfileLineItem icon={faFileLines} href={'https://media.graphassets.com/4TzQssQRT9moycO6sbES'} text={'my resume'}/>
                 <ProfileLineItem icon={faLinkedin} href={'https://linkedin.com/in/haoyudoing'} text={'/in/haoyudoing'}/>
                 <ProfileLineItem icon={faEnvelope} href={'mailto:wongyuhao.swe@gmail.com'} text={'my email'}/>
                 <ProfileLineItem icon={faGithub} href={'https://github.com/wongyuhao'} text={'/wongyuhao'}/>
