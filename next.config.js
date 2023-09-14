@@ -22,6 +22,11 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/resume',
+        destination: 'https://media.graphassets.com/VqGs071IQJugX9MO8n0T',
+        permanent: true,
+      },
     ]
   },
 }
