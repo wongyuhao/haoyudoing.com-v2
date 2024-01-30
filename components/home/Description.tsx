@@ -1,9 +1,7 @@
-import React, {useState} from 'react'
+import React  from 'react'
 import {faEnvelope, faFileLines} from "@fortawesome/free-solid-svg-icons";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import ProfileLineItem from "./ProfileLineItem";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowPointer} from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Description({resumeUrl}:{resumeUrl: string}){
