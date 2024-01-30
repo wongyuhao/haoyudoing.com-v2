@@ -4,15 +4,9 @@ import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import ProfileLineItem from "./ProfileLineItem";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowPointer} from "@fortawesome/free-solid-svg-icons";
-import TapiaModal from "../TapiaModal";
 
 
 export default function Description({resumeUrl}:{resumeUrl: string}){
-    const [showModal, setShowModal] = useState<boolean>(true);
-
-    const toggleModal = () => {
-        setShowModal(!showModal);
-    }
 
     return (
         <div className={'card lg:col-span-8 flex flex-col justify-evenly'}>
@@ -21,11 +15,6 @@ export default function Description({resumeUrl}:{resumeUrl: string}){
                 <div className={'text-2xl'}>
                     About Me
                 </div>
-                <button className={'bg-amber-300 font-bold rounded p-1 hover:bg-amber-400'} onClick={toggleModal}>
-                    <FontAwesomeIcon icon={faArrowPointer} className={'mx-1.5'}/>
-                    ACM Tapia 2023
-                </button>
-                {showModal && <TapiaModal closeModal={toggleModal}/>}
             </div>
 
 
