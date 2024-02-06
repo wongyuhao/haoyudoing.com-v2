@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 
 html,
 body {
@@ -45,6 +47,10 @@ a.styled{
 
 .cv-subheading{
   @apply font-black text-2xl mb-2
+}
+
+.husky-body {
+  font-family: 'Encode Sans', sans-serif;
 }
 
 .loading {
