@@ -52,7 +52,7 @@ const CircleContent = () => (<div className={'flex flex-col gap-4'}>
         - areas that I felt personally were daunting to navigate as a freshman in a foreign country.
     </p>
     <b>I believed that more students would thrive given the right resources and support.</b>
-    <p>Today, RCG has grown into vibrant community providing for over <b>90%</b> of each year's inbound international students, and becoming their network into college life and beyond.
+    <p>Today, RCG has grown into vibrant community providing for over <b>95%</b> of each year's international student class, and becoming their network into college life and beyond.
     I've had the opportunity to continue my involvement by interviewing future Peer Leaders, and sharing my engineering learnings from in- and outside- the classroom at Career Speaker Panels</p>
     <div className={'flex flex-col'}>
         <HA url={"https://canvas.uw.edu/courses/1436572"} text={"Canvas: RCG 2023"}/>
