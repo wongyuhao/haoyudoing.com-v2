@@ -5,10 +5,7 @@ import uwEntrance from './images/uwentrance_art.png'
 import {sortBy} from 'lodash'
 import dynamic from "next/dynamic";
 import Image, {StaticImageData} from "next/image";
-import { Gallery } from "react-grid-gallery";
-const GraphView = dynamic(() => import("./Graph"), {
-    ssr: false,
-});
+import hao from './images/hao.png'
 import avatar from './images/old/avatar.png'
 
 
@@ -38,13 +35,17 @@ export default function Husky100() {
         </div>
         <div className={'h-12'}></div>
         <ListView/>
-        <div className={'m-0.5  py-5 flex flex-row gap-3'}>
+        <div className={'p-4'}>
             <p className={'text-4xl text-[#32006e] font-black'}>As my time at UW comes to a close,</p>
-        <div>
-            <p>I could not be more proud and grateful for each and every community, interaction and lesson that has shaped my journey.</p>
-            <p> My time as a Husky and helped tremendously to shape my future path. I want to shape my Software Engineering career and make my impact by breaking down barriers and make the world a closer place.</p>
-            <p> I'm excited to take my boundless experiences to the world, and to achieve what's most important to me - empowering everyone to find their place and community</p>
-        </div>
+            <div className={'py-5 flex flex-row'}>
+                <Image src={hao} alt={""} className={'w-72 rounded-xl'}/>
+                <div className={'m-5 '}>
+                    <p>I could not be more proud and grateful for each and every community, interaction and lesson that has shaped my journey.</p>
+                    <p> My time as a Husky and helped tremendously to shape my future path. I want to shape my Software Engineering career and make my impact by breaking down barriers and make the world a closer place.</p>
+                    <p> I'm excited to take my boundless experiences to the world, and to achieve what's most important to me - empowering everyone to find their place and community</p>
+                </div>
+
+            </div>
         </div>
         <hr className={'p-3'}/>
         <div className={'flex flex-row justify-between'}>

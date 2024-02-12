@@ -9,7 +9,8 @@ import dh20 from './images/dh20.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
 import {StaticImageData} from "next/image";
-import hao from './images/hao.png'
+
+import notion from './images/notion.png'
 
 
 interface HAProps {
@@ -186,9 +187,9 @@ export const nodes: Record<string, HuskyNode> = {
         id: 'today',
         date: '2024',
         out_edges: [],
-        title: "One last adventure",
+        title: "What I'm up to today",
         content: <TodayContent/>,
-        images: [hao]
+        images: [notion]
     },
 
 }
